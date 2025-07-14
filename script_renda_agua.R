@@ -32,6 +32,7 @@ dados_renda_consumo <- dados_renda_consumo %>%
 
 
 #grafico de dispersao Renda por Consumo de agua
+
 dados_renda_consumo |>
   ggplot(aes(x = RendaPerCapita, y = consumoMedioPerCapita)) +
   geom_point(alpha = 0.2) +
@@ -51,6 +52,9 @@ dados_renda_consumo <- dados_renda_consumo %>%
     CODIBGE = as.character(CODIBGE), 
     consumoMedioPerCapita = as.numeric(consumoMedioPerCapita)
   )
+
+
+#mapas de dsitribuição
 
 br_municipios<-read_sf("dadosMapas/BR_Municipios_2024/BR_Municipios_2024.shp")
 glimpse(br_municipios)
@@ -82,7 +86,7 @@ dados_unidos |>
   scale_fill_gradient(low = "#8bc18e",high = "#047d0c", name="Renda")
 
 
-# calcuo de correlacao
+# calculo de correlacao
 
 
 # Calcular a correlação entre renda e consumo de água
